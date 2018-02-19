@@ -1,19 +1,28 @@
 name: _
 args:
-    - param_file:
-        short: p
-        value_name: param_file
-        help: Parameter file
-        takes_value: true
     - debug_mode:
         short: d
         help: Debug mode
+    - debug_mode_plus:
+        short: D
+        help: Debug mode plus bracketing info
+    - cut_off:
+        short: c
+        value_name: n
+        help: Cut-off length for statistics
+        takes_value: true
+        default_value: "40"
     - num_errors:
         short: e
         value_name: n
         help: Number of error to kill
         takes_value: true
         default_value: "10"
+    - param_file:
+        short: p
+        value_name: param_file
+        help: Parameter file
+        takes_value: true
     - gold_file:
         required: true
         index: 1
