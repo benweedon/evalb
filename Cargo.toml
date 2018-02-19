@@ -1,0 +1,6 @@
+[package]
+name = "evalb"
+version = "0.0.0"
+authors = ["Ben Weedon <ben.weedon@outlook.com>"]
+
+[dependencies]
