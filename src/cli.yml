@@ -3,6 +3,7 @@ args:
     - debug_mode:
         short: d
         help: Debug mode
+        conflicts_with: debug_mode_plus
     - debug_mode_plus:
         short: D
         help: Debug mode plus bracketing info
