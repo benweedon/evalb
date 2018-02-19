@@ -1,0 +1,22 @@
+name: _
+args:
+    - param_file:
+        short: p
+        value_name: param_file
+        help: Parameter file
+        takes_value: true
+    - debug_mode:
+        short: d
+        help: Debug mode
+    - num_errors:
+        short: e
+        value_name: n
+        help: Number of error to kill
+        takes_value: true
+        default_value: "10"
+    - gold_file:
+        required: true
+        index: 1
+    - test_file:
+        required: true
+        index: 2
