@@ -1,11 +1,13 @@
 #[macro_use]
 extern crate clap;
+extern crate evalb;
 
 use std::fs::File;
 use std::io::{BufRead, BufReader};
 use std::process;
 
 use clap::App;
+use evalb::Tree;
 
 #[derive(Debug)]
 enum DebugMode {
@@ -31,8 +33,8 @@ fn main() {
         DebugMode::None
     };
 
-    let cut_len = matches.value_of("cut_off");
-    let max_error = matches.value_of("num_errors");
+    let _cut_len = matches.value_of("cut_off");
+    let _max_error = matches.value_of("num_errors");
 
     if matches.is_present("param_file") {
         // read_parameter_file(matches.value_of("param_file"));
@@ -51,7 +53,9 @@ fn main() {
         let gold_line = gold_lines.next();
         let test_line = test_lines.next();
         match (gold_line, test_line) {
-            (Some(_gold_line), Some(_test_line)) => {
+            (Some(gold_line), Some(test_line)) => {
+                let _gold_tree = Tree::from_string(&gold_line.unwrap());
+                let _test_tree = Tree::from_string(&test_line.unwrap());
                 // calc_result(gold_line, test_line);
                 match debug_mode {
                     DebugMode::Normal | DebugMode::Plus => {
